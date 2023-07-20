@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     get 'followers', on: :member
   end
 
-  resources :groups, only: [:new, :index, :show, :create, :edit, :update]
+  resources :groups do
+    get "join" => "groups#join"
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
